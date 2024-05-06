@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeroesComponent } from './components/heroes/heroes.component';
 import { CommonModule } from '@angular/common';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterOutlet,
     HeroesComponent,
-    CommonModule
+    CommonModule,
+    MessagesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

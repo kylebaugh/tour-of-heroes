@@ -1,0 +1,11 @@
+
+<!-- conditional render of entire div -->
+<div *ngIf="messageService.messages.length">
+
+    <h2>Messages</h2>
+    <!-- setting up type, class, and event binding the onClick functionality -->
+    <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
+
+    <!-- Looping over all indexes in messages array and creating a div for each -->
+    <div *ngFor="let message of messageService.messages">{{ message }}</div>
+</div>
