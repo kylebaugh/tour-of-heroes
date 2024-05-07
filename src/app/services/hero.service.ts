@@ -24,6 +24,13 @@ export class HeroService {
     return heroes
   }
 
+  getHero(id:number){
+    const hero = HEROES.find(el => el.id === id)
+    this.messageService.add(`HeroService: Found hero id=${id}`)
+
+    return of(hero)
+  }
+
   getMons(){
     axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
       .then(res => {
