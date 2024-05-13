@@ -1,12 +1,17 @@
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-        <button type="button" [class.selected]="hero === selectedHero">
-            <span class="badge">{{ hero.id }}</span>
-            <span class="name">{{ hero.name }}</span>
-        </button>
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/hero/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{ hero.name }}
+        </a>
     </li>
 </ul>
 
-<div *ngIf="selectedHero">
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-</div>
+<!-- Old version with onSelect bound to click
+    <ul>
+        <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+            <button type="button" [class.selected]="hero === selectedHero">
+                <span class="badge">{{ hero.id }}</span>
+                <span class="name">{{ hero.name }}</span>
+            </button>
+        </li>
+    </ul> -->
